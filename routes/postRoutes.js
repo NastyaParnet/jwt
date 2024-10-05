@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.route("/").get(verifyToken).get(postController.getAllPosts);
 router.route("/my").get(verifyToken).get(postController.getMyPosts);
-router.route("/:id").patch(postController.patchPost);
+router.route("/:id").patch(verifyToken).patch(postController.patchPost);
 
 module.exports = router;

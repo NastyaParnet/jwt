@@ -388,7 +388,7 @@ describe("", () => {
     });
   });
 
-  describe.skip("/posts/:id (PATCH)", () => {
+  describe("/posts/:id (PATCH)", () => {
     it(`returns post to authenticated user if the post belongs to user, calls jwt verify`, async () => {
       const jwtUser = {
         name: "Anderson",
