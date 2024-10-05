@@ -90,7 +90,7 @@ describe("", () => {
     });
   });
 
-  describe.skip("auth/login (POST)", () => {
+  describe("auth/login (POST)", () => {
     it("allows user to login with credentials he signed up with and returns 2 tokens", async () => {
       const payload = {
         username: "Smith",
