@@ -10,6 +10,8 @@ exports.getAllPosts = async (req, res) => {
 
 exports.getMyPosts = async (req, res) => {
   try {
+    const myPosts = posts.filter((post) => post.author === req.userName);
+    res.status(200).json(myPosts);
   } catch (err) {
     console.log(err);
   }

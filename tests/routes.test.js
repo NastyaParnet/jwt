@@ -336,7 +336,7 @@ describe("", () => {
     });
   });
 
-  describe.skip("/posts/my (GET)", () => {
+  describe("/posts/my (GET)", () => {
     it(`returns user's posts to authenticated user, calls jwt verify`, async () => {
       const jwtUser = {
         name: "Davis",
