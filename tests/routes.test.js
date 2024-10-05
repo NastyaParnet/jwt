@@ -187,7 +187,7 @@ describe("", () => {
     });
   });
 
-  describe.skip("auth/token (POST)", () => {
+  describe("auth/token (POST)", () => {
     it(`allows user to get new valid token using refresh token
           and calls jwt sign and verify functions with correct arguments`, async () => {
       const signedUpUser = {
