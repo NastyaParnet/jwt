@@ -116,6 +116,22 @@ exports.login = async (req, res) => {
 
 exports.logout = async (req, res) => {
   try {
+    const { token } = req.body;
+    if (!token) {
+      res.status(401).send("All input is required");
+    }
+    const tokenIndex = refreshTokens.findIndex((t) => t === token);
+    if (tokenIndex !== -1) {
+      refreshTokens.splice(tokenIndex, 1);
+
+      res.status(204).json({
+        result: "Logout is successful",
+      });
+    } else {
+      res.status(403).json({
+        errors: [{ msg: "Invalid Credentials" }],
+      });
+    }
   } catch (err) {
     console.log(err);
   }

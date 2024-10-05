@@ -268,7 +268,7 @@ describe("", () => {
     });
   });
 
-  describe.skip("auth/logout (DELETE)", () => {
+  describe("auth/logout (DELETE)", () => {
     it(`removes refresh token from refresh tokens array`, async () => {
       const payload = { token: "refresh-token" };
       refreshTokens.length = 0;
