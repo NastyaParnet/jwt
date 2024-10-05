@@ -26,7 +26,7 @@ describe("", () => {
     jest.resetAllMocks();
   });
 
-  describe.skip("auth/signup (POST)", () => {
+  describe("auth/signup (POST)", () => {
     it("signs up user and returns '{ result: 'Signup is successful' }'", async () => {
       users.length = 0;
       const payload = {
