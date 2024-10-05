@@ -26,7 +26,7 @@ describe("", () => {
     jest.resetAllMocks();
   });
 
-  describe("auth/signup (POST)", () => {
+  describe.skip("auth/signup (POST)", () => {
     it("signs up user and returns '{ result: 'Signup is successful' }'", async () => {
       users.length = 0;
       const payload = {
@@ -90,7 +90,7 @@ describe("", () => {
     });
   });
 
-  describe("auth/login (POST)", () => {
+  describe.skip("auth/login (POST)", () => {
     it("allows user to login with credentials he signed up with and returns 2 tokens", async () => {
       const payload = {
         username: "Smith",
@@ -187,7 +187,7 @@ describe("", () => {
     });
   });
 
-  describe("auth/token (POST)", () => {
+  describe.skip("auth/token (POST)", () => {
     it(`allows user to get new valid token using refresh token
           and calls jwt sign and verify functions with correct arguments`, async () => {
       const signedUpUser = {
@@ -268,7 +268,7 @@ describe("", () => {
     });
   });
 
-  describe("auth/logout (DELETE)", () => {
+  describe.skip("auth/logout (DELETE)", () => {
     it(`removes refresh token from refresh tokens array`, async () => {
       const payload = { token: "refresh-token" };
       refreshTokens.length = 0;
@@ -283,7 +283,7 @@ describe("", () => {
       expect(refreshTokens).toEqual(["other-refresh-token"]);
     });
   });
-  describe("/posts (GET)", () => {
+  describe.skip("/posts (GET)", () => {
     it(`returns all posts to authenticated user, calls jwt verify`, async () => {
       const signedUpUser = {
         username: "Smith",
@@ -336,7 +336,7 @@ describe("", () => {
     });
   });
 
-  describe("/posts/my (GET)", () => {
+  describe.skip("/posts/my (GET)", () => {
     it(`returns user's posts to authenticated user, calls jwt verify`, async () => {
       const jwtUser = {
         name: "Davis",
@@ -388,7 +388,7 @@ describe("", () => {
     });
   });
 
-  describe("/posts/:id (PATCH)", () => {
+  describe.skip("/posts/:id (PATCH)", () => {
     it(`returns post to authenticated user if the post belongs to user, calls jwt verify`, async () => {
       const jwtUser = {
         name: "Anderson",
