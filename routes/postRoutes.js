@@ -1,9 +1,10 @@
 const express = require("express");
 const postController = require("../controllers/postController");
+const verifyToken = require("../middleware/auth");
 
 const router = express.Router();
 
-router.route("/").get(postController.getAllPosts);
+router.route("/").get(verifyToken).get(postController.getAllPosts);
 router.route("/my").get(postController.getMyPosts);
 router.route("/:id").patch(postController.patchPost);
 

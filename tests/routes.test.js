@@ -283,7 +283,7 @@ describe("", () => {
       expect(refreshTokens).toEqual(["other-refresh-token"]);
     });
   });
-  describe.skip("/posts (GET)", () => {
+  describe("/posts (GET)", () => {
     it(`returns all posts to authenticated user, calls jwt verify`, async () => {
       const signedUpUser = {
         username: "Smith",
